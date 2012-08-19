@@ -1,0 +1,8 @@
+bin/
+parts/
+src/z3c.recipe.staticlxml
+.installed.cfg
+README.html
+adminPassword.txt
+var/
+
