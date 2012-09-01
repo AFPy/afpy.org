@@ -5,4 +5,5 @@ src/z3c.recipe.staticlxml
 README.html
 adminPassword.txt
 var/
-
+eggs/
+downloads/
