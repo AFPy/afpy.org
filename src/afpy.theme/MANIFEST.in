@@ -1,0 +1,2 @@
+recursive-include afpy *
+global-exclude *pyc
