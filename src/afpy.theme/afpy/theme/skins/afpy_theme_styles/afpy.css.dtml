@@ -1,1 +1,203 @@
-h1{color:red}
+/* Palette : Afpy.org Dark <http://kuler.adobe.com/#themeID/2065061>
+    Violet      #8C3775
+    Bleu        #3C7DA6
+    Bleu-vert   #32A69A
+    Blanc       #F2F2F2
+    Noir à partir du Bleu #00080D
+*/
+
+body{
+    font-family: Corbel,
+                 "Lucida Grande",
+                 "Lucida Sans Unicode",
+                 "Lucida Sans",
+                 "DejaVu Sans",
+                 "Bitstream Vera Sans",
+                 "Liberation Sans",
+                 Verdana,
+                 sans-serif;
+}
+
+/* Correction de la police 80%>100% */
+#portal-globalnav,
+#portal-personaltools,
+#portal-searchbox,
+#portal-languageselector,
+#LSResult .LSDescr,
+#portal-breadcrumbs,
+#portal-siteactions,
+dl.portlet,
+div.portletAssignments,
+#content,
+div.managePortletsLink,
+a.managePortletsFallback,
+#category,
+#content pre,
+#content div.documentByLine,
+dl.portalMessage,
+.comment,
+#portal-footer,
+#portal-colophon {
+    font-size: 100%;
+}
+
+:link{
+    color: #3C7DA6;
+}
+:visited{
+    color: #8C3775;
+}
+
+/**
+  Menus #portal-globalnav et .portlet
+**/
+#portal-globalnav{
+    font-size: 100%;
+    background: none;
+}
+
+#portal-globalnav li a:link,
+#portal-globalnav li a:visited,
+#portal-globalnav li a:hover,
+#portal-globalnav li a:focus,
+#portal-globalnav .selected a,
+#portal-globalnav .selected a:hover,
+dl.portlet dt a:link,
+dl.portlet dt a:visited,
+dl.portlet dt a:hover,
+dl.portlet dt a:focus,
+.portletFooter a:link,
+.portletFooter a:visited,
+.portletFooter a:hover,
+.portletFooter a:focus{
+    color: #F2F2F2;
+    font-weight: bold;
+    text-align: center;
+    
+    background: #32A69A;
+    
+    padding: 1em;
+    
+    border: .2em solid #fff;
+}
+
+#portal-globalnav li a:hover,
+#portal-globalnav li a:focus,
+dl.portlet dt a:hover,
+dl.portlet dt a:focus,
+.portletFooter a:hover,
+.portletFooter a:focus{
+    background: #8C3775;
+    border-color: #8C3775;
+    text-decoration: underline;
+}
+
+#portal-globalnav li.selected a,
+#portal-globalnav li.selected a:hover,
+#portal-globalnav li.selected a:focus{
+    font-weight: normal;
+    background: #3C7DA6;
+    text-decoration: underline;
+}
+#portal-globalnav li.selected a:hover,
+#portal-globalnav li.selected a:focus{
+    border-color: #3C7DA6;
+}
+
+
+dl.portlet dt a:link,
+dl.portlet dt a:visited,
+dl.portlet dt.portletHeader a:hover,
+dl.portlet dt.portletHeader a:focus,
+.portletFooter a:link,
+.portletFooter a:visited,
+.portletFooter a:hover,
+.portletFooter a:focus{
+    color: #F2F2F2 !important; /* FIXME : pb de priorité des sélecteurs cSS */
+    padding: .5em 1em;
+    font-size: 100%;
+}
+
+dl.portlet dt.portletHeader a:hover,
+dl.portlet dt.portletHeader a:focus,
+.portletFooter a:hover,
+.portletFooter a:focus{
+    color: #F2F2F2 !important; /* FIXME : pb de priorité des sélecteurs cSS */
+}
+
+dl.portlet dt, div.portletAssignments div.portletHeader
+{
+  padding: 0;
+}
+
+
+#content a:hover, dl.portlet a:hover{
+    text-decoration: underline;
+}
+
+#content a:link, dl.portlet a:link
+{
+  border: 0;
+}
+
+.portletItemDetails{
+    text-align: right;
+    padding: 0;
+}
+
+dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd{
+    padding: 0;
+    margin: 0 .5em 1em;
+}
+
+.portletFooter{
+    text-align: center;
+}
+
+
+/* menus pour le mobile */
+@media (max-width: 640px) {
+    
+}
+
+/* cf. http://www.codestyle.org/servlets/FontStack?stack=Segoe+UI,Candara,Bitstream+Vera+Sans,DejaVu+Sans,Trebuchet+MS,Verdana&generic=sans-serif */ 
+h1,h2,h3,h4,h5,h6, #portal-globalnav, dt{
+    font-family: "Segoe UI",
+                 Candara,
+                 "Bitstream Vera Sans",
+                 "DejaVu Sans",
+                 "Trebuchet MS",
+                 Verdana,
+                 sans-serif;
+}
+
+/* footer */
+#portal-footer-wrapper{
+    color: #f2f2f2;
+    border-top: .5em solid #002E4B;
+    background:  #00080D;
+}
+
+#portal-footer-wrapper .cell.width-full.position-0{
+    text-align: center;
+}
+#portal-footer-wrapper a:link,
+#portal-footer-wrapper a:visited{
+    color: #98bfd8;
+    text-decoration: underline;
+}
+#portal-footer-wrapper a:hover,
+#portal-footer-wrapper a:focus{
+    text-decoration: none;
+}
+
+#portal-footer{
+    display: inline-block;
+    background: transparent;
+}
+
+#portal-footer,
+#portal-colophon {
+    line-height: 1em;
+    padding: 0; margin: 0 0 1em;
+}   
