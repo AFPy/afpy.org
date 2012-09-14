@@ -7,5 +7,4 @@ adminPassword.txt
 var/
 eggs/
 downloads/
-.DS_Store
 .mr.developer.cfg

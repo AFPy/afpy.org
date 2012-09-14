@@ -17,11 +17,10 @@
       See registerScript() arguments in ResourceRegistries/tools/JSRegistry.py
       for the latest list of all available keys and default values.
       -->
-<!-- EXAMPLE (UNCOMMENT TO MAKE AVAILABLE):
+<!--
  <javascript
-    id="++resource++afpy.theme.javascripts/something.js"
+    id="++resource++afpy.theme.javascripts/afpy.js"
     cacheable="False" compression="safe" cookable="False"
     enabled="True" expression=""  inline="False"/>
 -->
-
 </object>
