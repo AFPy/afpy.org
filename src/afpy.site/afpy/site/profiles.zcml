@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="afpy.site">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="AFPY site configuration"
+      directory="profiles/default"
+      description='Extension profile for the "AFPY site configuration".'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  
+
+</configure>

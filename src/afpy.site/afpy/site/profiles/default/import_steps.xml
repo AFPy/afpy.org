@@ -1,0 +1,10 @@
+<?xml version="0.1"?>
+<import-steps>
+  <import-step id="afpy.site.content" version="20120914-01"
+               handler="afpy.site.setuphandlers.setup_content"
+               title="Afpy Content Import">
+    <dependency step="plone-content"/>
+    Afpy content import
+  </import-step>
+  
+</import-steps>
