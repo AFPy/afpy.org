@@ -9,3 +9,10 @@ eggs/
 downloads/
 .DS_Store
 .mr.developer.cfg
+env/
+src/afpy.theme/build/
+.*\.py[co]
+syntax: glob
+*.orig
+*.swp
+*.egg
