@@ -19,7 +19,7 @@ body{
 }
 
 /* Correction de la police 80%>100% */
-#portal-globalnav,
+/*#portal-globalnav,
 #portal-personaltools,
 #portal-searchbox,
 #portal-languageselector,
@@ -39,7 +39,7 @@ dl.portalMessage,
 #portal-footer,
 #portal-colophon {
     font-size: 100%;
-}
+}*/
 
 :link{
     color: #3C7DA6;
@@ -52,7 +52,7 @@ dl.portalMessage,
   Menus #portal-globalnav et .portlet
 **/
 #portal-globalnav{
-    font-size: 100%;
+    /*font-size: 100%;*/
     background: none;
 }
 
@@ -115,7 +115,7 @@ dl.portlet dt.portletHeader a:focus,
 .portletFooter a:focus{
     color: #F2F2F2 !important; /* FIXME : pb de priorité des sélecteurs cSS */
     padding: .5em 1em;
-    font-size: 100%;
+    /*font-size: 100%;*/
 }
 
 dl.portlet dt.portletHeader a:hover,
