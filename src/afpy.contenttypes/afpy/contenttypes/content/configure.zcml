@@ -1,0 +1,70 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="afpy.contenttypes">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  <class class=".zopehowto.ZopeHowto">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IZopeHowto"
+        />
+  </class>
+  <class class=".pythonhowto.PythonHowto">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IPythonHowto"
+        />
+  </class>
+  <class class=".fichezope.FicheZope">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IFicheZope"
+        />
+  </class>
+  <class class=".fichepython.FichePython">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IFichePython"
+        />
+  </class>
+  <class class=".afpyproduct.AFPYProduct">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IAFPYProduct"
+        />
+  </class>
+  <class class=".afpypressrelease.AFPYPressRelease">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IAFPYPressRelease"
+        />
+  </class>
+  <class class=".afpynews.AFPYNews">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IAFPYNews"
+        />
+  </class>
+  <class class=".afpylink.AFPYLink">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IAFPYLink"
+        />
+  </class>
+  <class class=".afpyjob.AFPYJob">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IAFPYJob"
+        />
+  </class>
+  <class class=".afpyevent.AFPYEvent">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IAFPYEvent"
+        />
+  </class>
+
+</configure>

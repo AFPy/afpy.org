@@ -6,5 +6,4 @@
     <dependency step="plone-content"/>
     Afpy content import
   </import-step>
-  
 </import-steps>

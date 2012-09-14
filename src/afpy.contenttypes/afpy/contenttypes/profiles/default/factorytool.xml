@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- This import step informs the portal_factory tool that we want it to
+     manage our content types. This tool deals with the fact that in
+     Archetypes and most CMF types, the object is actually created before
+     the first edit form is filled in. That is, there are no true "add forms".
+     The factory tool creates a temporary object in lieu of an "add form",
+     and then moves the object to the proper location after it has been
+     successfully saved.
+  -->
+<object name="portal_factory" meta_type="Plone Factory Tool">
+  <factorytypes>
+    <!-- -*- extra stuff goes here -*- -->
+    <type portal_type="Zope Howto" />
+    <type portal_type="Python Howto" />
+    <type portal_type="Fiche Zope" />
+    <type portal_type="Fiche Python" />
+    <type portal_type="AFPY Product" />
+    <type portal_type="AFPY Press Release" />
+    <type portal_type="AFPY News" />
+    <type portal_type="AFPY Link" />
+    <type portal_type="AFPY Job" />
+    <type portal_type="AFPY Event" />
+  </factorytypes>
+</object>

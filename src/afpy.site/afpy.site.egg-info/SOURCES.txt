@@ -12,4 +12,5 @@ afpy.site.egg-info/paster_plugins.txt
 afpy.site.egg-info/requires.txt
 afpy.site.egg-info/top_level.txt
 afpy/site/__init__.py
+afpy/site/setuphandlers.py
 afpy/site/tests.py

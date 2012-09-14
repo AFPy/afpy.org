@@ -10,7 +10,4 @@
       description='Extension profile for the "AFPY site configuration".'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-
-  
-
 </configure>

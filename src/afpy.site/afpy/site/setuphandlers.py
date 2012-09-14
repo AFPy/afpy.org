@@ -24,7 +24,7 @@ def setup_content(context):
 
     existing = set(site.objectIds())
 
-    # Initialize some documents
+    # Initialize some contents
     for item_page in CONTENTS_TO_INIT:
         item_page_id = item_page['id']
         if item_page_id not in existing:
@@ -45,3 +45,4 @@ def setup_content(context):
         folder = getattr(site, f)
         folder.setExcludeFromNav(True)
         folder.reindexObject()
+
