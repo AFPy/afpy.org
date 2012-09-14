@@ -1,0 +1,6 @@
+Set the shared secret in zopectl:
+
+ /Plone/acl_users/session
+
+Check algo:
+ ./eggs/plone.session-3.5-py2.7.egg/plone/session/tktauth.py
