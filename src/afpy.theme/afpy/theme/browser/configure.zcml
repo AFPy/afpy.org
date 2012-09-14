@@ -49,12 +49,6 @@
       directory="stylesheets"
       layer=".interfaces.IThemeSpecific"
       />
-      
-  <browser:resourceDirectory
-      name="afpy.theme.javascripts"
-      directory="javascripts"
-      layer=".interfaces.IThemeSpecific"
-      />
 
 
 </configure>
