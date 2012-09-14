@@ -1,0 +1,15 @@
+README.txt
+setup.cfg
+setup.py
+afpy/__init__.py
+afpy.site.egg-info/PKG-INFO
+afpy.site.egg-info/SOURCES.txt
+afpy.site.egg-info/dependency_links.txt
+afpy.site.egg-info/entry_points.txt
+afpy.site.egg-info/namespace_packages.txt
+afpy.site.egg-info/not-zip-safe
+afpy.site.egg-info/paster_plugins.txt
+afpy.site.egg-info/requires.txt
+afpy.site.egg-info/top_level.txt
+afpy/site/__init__.py
+afpy/site/tests.py

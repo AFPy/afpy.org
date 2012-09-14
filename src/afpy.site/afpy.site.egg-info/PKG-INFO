@@ -1,19 +1,25 @@
 Metadata-Version: 1.0
-Name: afpy.theme
+Name: afpy.site
 Version: 0.1
-Summary: afpy.org theme for new site
+Summary: UNKNOWN
 Home-page: http://svn.plone.org/svn/collective/
 Author: UNKNOWN
 Author-email: UNKNOWN
-License: gpl
-Description: .. contents::
-        
-        Introduction
+License: GPL
+Description: Introduction
         ============
         
         
-        HISTORY
         
+        This product may contain traces of nuts.
+        
+        Changelog
+        =========
+        
+        0.1dev (unreleased)
+        -------------------
+        
+        - Initial release
         
 Platform: UNKNOWN
 Classifier: Framework :: Plone
