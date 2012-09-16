@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="afpy.gallery">
+
+  <!-- ' afpy.gallery' Zope 3 browser layer -->
+  <interface name="afpy.gallery-theme"
+      interface="afpy.gallery.interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+    />
+  <interface  name="afpy.gallery" interface="afpy.gallery.interfaces.ILayer" />
+
+  <!-- Viewlets registration -->
+
+  <!-- Zope 3 browser views -->
+  <!--
+    <browser:page
+        layer="afpy.gallery.interfaces.ILayer"
+        for="afpy.gallery.interface.mycontent"
+        name="MyView"
+        class=".view.MyView"
+        allowed_interface=".view.IMyView"
+        permission="zope2.View"
+      />
+  -->
+
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory -->
+  <browser:resourceDirectory
+      name="afpy.gallery"
+      directory="resources"
+      layer="afpy.gallery.interfaces.ILayer"
+    />
+  <browser:page
+      layer="afpy.gallery.interfaces.ILayer"
+      for="OFS.interfaces.IItem"
+      class=".controlpanel.Import"
+      allowed_interface=".controlpanel.IImport"
+      permission="cmf.ManagePortal"
+      name="afpygallery-import"/>
+  <!-- disable kss inline validation-->
+  <browser:page
+      layer="afpy.gallery.interfaces.ILayer"
+      for="*"
+      class=".controlpanel.NullFormValidation"
+      attribute="validate_input"
+      permission="zope2.View"
+      name="kss_z3cform_inline_validation" />
+  <!-- vim:set ft=xml: -->
+</configure>

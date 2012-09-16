@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="afpy.gallery">
+  <include package="Products.Five" file="configure.zcml"/>
+  <include package="Products.CMFCore" file="permissions.zcml" />
+  <!-- Load the ZCML configuration for the afpy.gallery package.-->
+  <!--with_ploneproduct_galleria -->
+  <include package="collective.galleria" file="configure.zcml"/>
+  <!--with_ploneproduct_cjqui -->
+  <include package="collective.js.jqueryui" file="configure.zcml"/>
+  <!--with_ploneproduct_cgallery -->
+  <include package="collective.gallery" file="configure.zcml"/>
+  <!--with_ploneproduct_configviews -->
+  <include package="collective.configviews" file="configure.zcml"/>
+  <five:registerPackage package="." initialize=".initialize" />
+  <!-- activate to customize the dashboard-->
+  <include package=".browser" />
+  <include file="profiles.zcml" />
+  <i18n:registerTranslations directory="locales" />
+  
+  <cmf:registerDirectory
+       name="afpy_gallery_custom"/>
+  
+</configure>
+<!-- vim:set ft=xml: -->

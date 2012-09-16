@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<metadata>
+  <version>1000</version>
+  <dependencies>
+  <!-- GenericSetup dependencies -->
+      <dependency>profile-collective.configviews:default</dependency>
+      <dependency>profile-collective.galleria:default</dependency>
+      <dependency>profile-collective.gallery:default</dependency>
+      <dependency>profile-collective.js.jqueryui:default</dependency>
+ </dependencies>
+</metadata>

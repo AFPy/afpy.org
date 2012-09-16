@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="afpy.gallery"
+    purge="False">
+  <configlet 
+      title="afpy.gallery Settings"
+      action_id="afpygallery"
+      appId="afpy.gallery"
+      category="Products"
+      condition_expr=""
+      url_expr="string:${portal_url}/@@afpygallery-import"
+      icon_expr="string:${portal_url}/image_icon.png"
+      visible="True"
+      i18n:attributes="title">
+    <permission>Manage portal</permission>
+  </configlet> 
+</object>

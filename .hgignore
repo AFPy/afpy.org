@@ -1,4 +1,5 @@
 bin/
+.*.mo
 parts/
 src/z3c.recipe.staticlxml
 .installed.cfg

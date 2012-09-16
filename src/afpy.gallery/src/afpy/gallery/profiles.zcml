@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="afpy.gallery">
+  <!-- Include direct package dependencies -->
+  <genericsetup:registerProfile
+      name="default"
+      title="afpy.gallery"
+      directory="profiles/default"
+      description="Install the afpy.gallery addon on this plone site."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+  <genericsetup:importStep
+      name="afpy_gallery_setupVarious"
+      title="various setup for afpy.gallery "
+      description="description"
+      handler="afpy.gallery.setuphandlers.setupVarious">
+    <depends name="content"/>
+  </genericsetup:importStep>
+  <!-- -->
+  <utility factory=".app_config.HiddenProducts" name="afpy_gallery.hiddenproducts"/>
+  <utility factory=".app_config.HiddenProfiles" name="afpy_gallery.hiddenprofiles"/> 
+  <include package=".upgrades"/>
+</configure> 
