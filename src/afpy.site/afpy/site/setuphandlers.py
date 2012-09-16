@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- codingav  utf-8 -*-
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import _createObjectByType
@@ -18,7 +18,10 @@ CONTENTS_TO_INIT = [{'id':'site',
 def setup_content(context):
     """Final content setup
     """
-    site = context.getSite()
+    if context.readDataFile(
+        'afpy.site_various.txt') is None: return
+    site = getToolByName(context.getSite(), 
+                         'portal_url').getPortalObject()
 
     wftool = getToolByName(site, "portal_workflow")
 

@@ -10,4 +10,12 @@
       description='Extension profile for the "AFPY site configuration".'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+   <genericsetup:importStep
+      name="afpy_site_content"
+      title="Afpy Content Import"
+      description="d"
+      handler="afpy.site.setuphandlers.setup_content">
+      <depends name="content"/>
+  </genericsetup:importStep>
+  <include package=".upgrades"/>
 </configure>

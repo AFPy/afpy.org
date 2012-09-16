@@ -6,5 +6,7 @@
 
   <five:registerPackage package="." initialize=".initialize" />
   <include file="profiles.zcml" />
-  
+  <include package="afpy.contenttypes" file="configure.zcml" />
+  <include package="afpy.gallery"      file="configure.zcml" />
+  <include package="afpy.theme"        file="configure.zcml" />
 </configure>
