@@ -31,9 +31,10 @@ def setup_content(context):
     for item_page in CONTENTS_TO_INIT:
         item_page_id = item_page['id']
         if item_page_id not in existing:
-            _createObjectByType(item_page['type'], site, id=item_page_id,
+            page = _createObjectByType(item_page['type'], site, id=item_page_id,
                                 title = u'%s' % item_page['title'])
-            page = site[item_page_id]
+            page.processForm()
+            page.reindexObject()
             # Publish content:
             if wftool.getInfoFor(page, 'review_state') != 'published':
                 wftool.doActionFor(page, 'publish')

@@ -10,6 +10,7 @@ except:
     from plone.app.upgrade import utils as migration_util
 
 from Products.CMFCore.utils import getToolByName
+from afpy.site.setuphandlers import CONTENTS_TO_INIT
 from Products.ATContentTypes.interface.image import IATImage
 from Products.ATContentTypes.content.image import ATImage
 import transaction
@@ -66,4 +67,15 @@ def upgrade_1001(context):
     pm = getToolByName(site, 'portal_migration')
     report = pm.upgrade(dry_run=False)
     log('v1001 applied')
-  
+
+def upgrade_1002(context):
+    """
+    """
+    site = getToolByName(context, 'portal_url').getPortalObject()
+    for c in CONTENTS_TO_INIT:
+        if c['id'] in site.objectIds():
+            obj = site[c['id']]
+            if obj.checkCreationFlag():
+                obj.processForm()
+    log('v1002 applied')
+

@@ -14,7 +14,7 @@
     <genericsetup:upgradeStep
           title="afpy.gallery import CSS"
           description=""
-          handler=".import_css" />  
+          handler=".import_css" />
     <genericsetup:upgradeStep
         title="afpy.gallery import JS"
         description=""
@@ -23,15 +23,18 @@
         title="afpy.gallery Recook resources"
         description=""
         handler=".recook_resources" />
-  </genericsetup:upgradeSteps>  
+  </genericsetup:upgradeSteps>
 
   -->
   <genericsetup:upgradeSteps profile="afpy.site:default" source="*" destination="1000">
     <genericsetup:upgradeStep  title="afpy.site * - 1000" description="" handler=".upgrade_1000" />
-  </genericsetup:upgradeSteps> 
+  </genericsetup:upgradeSteps>
   <genericsetup:upgradeSteps profile="afpy.site:default" source="1000" destination="1001">
     <genericsetup:upgradeStep  title="afpy.site * - 1000" description="" handler=".upgrade_1001" />
-  </genericsetup:upgradeSteps>  
+  </genericsetup:upgradeSteps>
+  <genericsetup:upgradeSteps profile="afpy.site:default" source="1001" destination="1002">
+    <genericsetup:upgradeStep  title="afpy.site * - 1000" description="" handler=".upgrade_1002" />
+  </genericsetup:upgradeSteps>
 
 
   <!-- vim:set ft=xml: -->
