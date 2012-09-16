@@ -25,6 +25,9 @@ setup(name='afpy.site',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'afpy.gallery',
+          'afpy.theme',
+          'afpy.contenttypes',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
