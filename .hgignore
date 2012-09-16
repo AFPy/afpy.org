@@ -1,3 +1,11 @@
+sys
+.*\.bak
+src/afpy.gallery/version.txt
+.git
+.*minitage.*
+.*judith.cfg.*
+.*.egg-info
+src/collective.gallery
 bin/
 .*.mo
 parts/
@@ -16,3 +24,4 @@ syntax: glob
 *.orig
 *.swp
 *.egg
+*.pyc
