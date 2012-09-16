@@ -59,3 +59,11 @@ def upgrade_1000(context):
     portal_setup.runAllImportStepsFromProfile('profile-afpy.contentypes:default')
     log('v1000 applied')
 
+def upgrade_1001(context):
+    """
+    """
+    site = getToolByName(context, 'portal_url').getPortalObject()
+    pm = getToolByName(site, 'portal_migration')
+    report = pm.upgrade(dry_run=False)
+    log('v1001 applied')
+  
