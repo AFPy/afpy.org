@@ -24,9 +24,6 @@
   <include package=".browser" />
   <include file="profiles.zcml" />
   <i18n:registerTranslations directory="locales" />
-  
-  <cmf:registerDirectory
-       name="afpy_gallery_custom"/>
-  
+  <cmf:registerDirectory name="afpy_gallery_custom"/>
 </configure>
 <!-- vim:set ft=xml: -->
