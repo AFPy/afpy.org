@@ -30,15 +30,7 @@
 #portal-globalnav li a:hover,
 #portal-globalnav li a:focus,
 #portal-globalnav .selected a,
-#portal-globalnav .selected a:hover,
-dl.portlet dt a:link,
-dl.portlet dt a:visited,
-dl.portlet dt a:hover,
-dl.portlet dt a:focus,
-.portletFooter a:link,
-.portletFooter a:visited,
-.portletFooter a:hover,
-.portletFooter a:focus{
+#portal-globalnav .selected a:hover{
     color: #F2F2F2;
     font-weight: bold;
     text-align: center;
@@ -48,11 +40,7 @@ dl.portlet dt a:focus,
 }
 
 #portal-globalnav li a:hover,
-#portal-globalnav li a:focus,
-dl.portlet dt a:hover,
-dl.portlet dt a:focus,
-.portletFooter a:hover,
-.portletFooter a:focus{
+#portal-globalnav li a:focus{
     background: #8C3775;
     border-color: #8C3775;
     text-decoration: underline;
@@ -71,16 +59,10 @@ dl.portlet dt a:focus,
 }
 
 
-dl.portlet dt a:link,
-dl.portlet dt a:visited,
 dl.portlet dt.portletHeader a:hover,
 dl.portlet dt.portletHeader a:focus,
-.portletFooter a:link,
-.portletFooter a:visited,
-.portletFooter a:hover,
 .portletFooter a:focus{
     color: #F2F2F2 !important; /* FIXME : pb de priorité des sélecteurs cSS */
-    padding: .5em 1em;
 }
 
 dl.portlet dt.portletHeader a:hover,
@@ -108,11 +90,6 @@ dl.portlet dt.portletHeader a:focus,
 .portletItemDetails{
     text-align: right;
     padding: 0;
-}
-
-dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd{
-    padding: 0;
-    margin: 0 .5em 1em;
 }
 
 .portletFooter{
