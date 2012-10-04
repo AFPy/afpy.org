@@ -14,19 +14,22 @@ import sys
 #TODO: test libxml2.parseFile(source)
 
 def fix_data(source):
-    patterns = ['\x1b.*?m', "\x0b", "\x07"]
+    patterns = ["\x0b", "\x07"]
+    regpatterns = ["\x1b.*?m"]
     source_file = file(source)
     data = source_file.read()
     source_file.close()
     res = []
-    for pattern in patterns:
+    for pattern in patterns + regpatterns:
         res += [(m.start(), pattern) for m in re.finditer(pattern, data)]
     if len(res) == 0:
         print "Your data is already cleaned.\nNothing to do."
-        return
+        sys.exit(0)
     print "%s patterns to fix found" % len(res)
     cleaned_data = data
     for pattern in patterns:
+        cleaned_data = cleaned_data.replace(pattern, '')
+    for pattern in regpatterns:
         cleaned_data = re.sub(pattern, '', cleaned_data)
     source_parts = source.split('/')
     source_filename_parts = source_parts[-1].split('.')
@@ -40,6 +43,7 @@ def fix_data(source):
     print "%s is cleaned now !" % source
     print "(Note: your old data was saved in %s)" % source_new_path
     print "Done"
+    sys.exit(0)
 
 
 def main():

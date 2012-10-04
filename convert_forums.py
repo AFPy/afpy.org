@@ -1,147 +1,212 @@
 #!/usr/bin/env python
 # coding:utf-8
 """
-(notes tshirtman)
+(notes tshirtman + sabrina)
 
-1/ mise en place de l'environement de travail
-déploiement afpy.org sur un plone 2.0 avec python 2.3
-déploiement nouveau afpy avec un plone 4
+Pré-requis : libxml2 et libxslt installé
 
-2/ export des forums
-export des forums du plone 2 via interface CMFPlone (afpy_python_forum_python.data et afpy_zope_forum_zope.data par exemple)
+1/ Mise en place de l'environement de travail :
 
-3/ préparation des imports
-installation de ploneboard_anyxmlimport dans products de plone 4
-ajout du module Interface de Plone 3 dans le dossier du module de ploneboard_anyxmlimport
-commenter la ligne de log dans ploneboard_anyxmlimport/
+--> Dupliquer l'instance Plone 2.0 et la déployer dans un environnement de test 
+    avec python2.4
+--> Reprendre le buildout du nouveau site afpy en Plone 4 et le déployer
 
-Création d'un lien symbolique entre products/ploneboard_anyxmlimport et parts/instance/Products/ploneboard_anyxmlimport
-/!\ ne pas oublier de renouveler cette dernière étape si un buildout est
-relancé plus tard
+2/ Export des forums :
 
-copie des fichiers d'export de CMFBoard dans le dossier imputxml de ploneboard_anyxmlimport
+À partir du Plone 2.0 :
 
-sauvegarde du Data.fs
+ATTENTION BUG à fixer (unauthorized) :
+Pour que le script d'export fonctionne il est nécessaire que le module 
+'Products.CMFBoard.forum_export' soit préalablement autorisé. Or le code 
+le permettant se trouve dans un try/except dans lequel le code plante en prod 
+(import forum_import -> from xml.sax import saxlib => ImportError: cannot import name saxlib)
+Du coup "allow_module('Products.CMFBoard.forum_export')" indispensable au 
+fonctionnement du script d'export n'est jamais exécuté.
 
-4/ imports
+--> Pour corriger rapidement ce problème, sortir du try le : 
+"allow_module('Products.CMFBoard.forum_export')"
+ligne 82 Products/CMFBoard/__init__.py du Plone 2.0
 
-création d'un dossier python (Python) et un dossier zope (Zope) dans afpy/ sur le plone4
+--> Redémarrer l'instance.
 
-création d'un Objet PloneboardAnyXMLImportController dans le dossier python
+--> Lancer l'export des 2 forums via : {your_portal_url}/forum_import_export_form
 
-ouvrir cet objet et remplacer le nom par afpy_python_forum_python)
+--> récupérer les exports des 2 forums : afpy_python_forum_python.data et afpy_zope_forum_zope.data
 
-attendre ~ 20mn pour l'import
 
-supprimer l'objet d'import
+3/ Préparation des imports :
 
-aller dans le dossier plone
+Installation de ploneboard_anyxmlimport dans products de plone 4 :
 
-créer un object PloneboardAnyXMLImportController
+--> Télécharger http://plone.org/products/ploneboard_anyxmlimport/releases/1.0/ploneboard_anyxmlimport-tar.gz
+--> Décompresser le dans le dossier products du buildout (afpy.org/products)
+--> dans afpy.org/products/ploneboard_anyxmlimport/interfaces.py, 
+    corriger l'import de Interface (changer les 2 premières lignes) :
+    
+            from zope.interface import Interface
+            
+            class IController(Interface):
 
-redémarrer le plone! (sinon les deux forums seront dans le dossier du premier import).
+--> Création d'un lien symbolique entre products/ploneboard_anyxmlimport et 
+    parts/instance/Products/ploneboard_anyxmlimport
+    /!\ ne pas oublier de renouveler cette dernière étape si un buildout est 
+    relancé plus tard
 
-importer le forum zope de la même façon que le forum python.
+--> Copier les fichiers d'export de CMFBoard (afpy_python_forum_python.data et 
+    afpy_zope_forum_zope.data) dans le dossier inputxml de 
+    ploneboard_anyxmlimport
 
-arreter le plone
+--> le XML extrait contient quelques caractères qui font planter 
+    libxml2.parseFile, il est nécessaire de lancer le script fixforumdata.py 
+    pour les corriger :
+            $ python fixforumdata.py products/ploneboard_anyxmlimport/inputxml/afpy_zope_forum_zope.data
+            $ python fixforumdata.py products/ploneboard_anyxmlimport/inputxml/afpy_python_forum_python.data
 
-sauvegarder Data.fs
+4/ Imports
 
-5/ conversion des forums
-lancer le script de conversion des forums au format html en lançant la commande
+--> sauvegarder la Data.fs, on ne sait jamais ;)
 
-    bin/instance run convert_forums.py
+Dans le Plone 4 :
 
-En cas de correction sur la conversion de forum, soit restaurer le data.fs,
+--> Créer un dossier python (Python) à la racine du site afpy Plone4
+
+--> En ZMI dans le dossier python ({your_portal_url}/python/manage) ajouter un 
+    Objet PloneboardAnyXMLImportController (avec comme id : 'controller' 
+    par exemple)
+
+--> Lancer l'import via : {your_portal_url}/python/controller/manage
+        avec :
+            name of the xml file to be used: (in directory /inputxml)
+            afpy_zope_forum_zope.data
+
+--> attendre ~ 20mn pour l'import
+
+--> supprimer l'objet d'import
+
+--> redemarrer l'instance sinon le deuxième forum va se coller dans le même 
+    dossier que le premier !
+
+--> Faite de même pour le deuxième forum, créer un dossier zope (Zope) à la 
+    racine du site afpy Plone4...
+
+
+5/ Conversion des forums
+
+Quelques boulettes subsistent dans le contenu des comments du forum. Le script 
+convert_forums.py permet de les corriger.
+
+--> Si vous souhaitez faire des modifs sur le script, il est préférable de 
+    faire une sauvegarde de la Data.fs, pour la restaurer au cas où il faudrait
+    faire des réajustements.
+
+--> Lancer le script de conversion des forums au format html en lançant 
+    la commande
+        $ bin/instance run convert_forums.py
+    vous pouvez spécifier l'id de l'instance du site Plone dans lequel se
+    trouve les forums à traiter.
+        $ bin/instance run convert_forums.py monsite
+
+En cas de correction sur la conversion de forum, soit restaurer la Data.fs,
 soit supprimer les deux forums, faire un réindex du catalog, et refaire les
 imports (voir 4).
-
-
 """
+
 import re
 import transaction
 import parser
+import sys
 
-pl = app['afpy']
+
+instance_id = 'afpy'
+if len(sys.argv) > 1:
+    instance_id = sys.argv[1]
+if instance_id not in app.keys():
+    if instance_id != 'afpy':
+        print "Le site '%s' n'existe pas. Renseignez le bon id de votre site \
+contenant les forums à corriger !" % instance_id
+        sys.exit(1)
+    print """Vous n'avez pas de site afpy, passez en paramètre l'id de votre \
+site Plone contenant les forums à corriger :
+$ bin/instance run convert_forums.py monsite
+"""
+    sys.exit(2)
+
+pl = app[instance_id]
 comments = pl.portal_catalog(portal_type='PloneboardComment')
-
-for comment in comments:
+total = len(comments)
+print "TOTAL %s" % total
+for e, comment in enumerate(comments):
+    print "Reste %s items" % str(int(total) - e)
     text = comment.getObject().getText()
-    # replace <> in a <pre> with &lt; and &gt;
-    #if "[code]" in text:
-        ## TODO
-    text = text.replace('\n','<br />')
-    text = text.replace('[b]','<b>').replace('[/b]','</b>')
-    text = text.replace('[i]','<i>').replace('[/i]','</i>')
-    text = text.replace('[code]','<pre><code>').replace('[/code]','</code></pre>')
-    text = text.replace('[u]','<u>').replace('[/u]','</u>')
-    text = text.replace('[u]','<u>').replace('[/u]','</u>')
-    text = text.replace('[strong]','<strong>').replace('[/strong]','</strong>')
+    text = text.replace('\n', '<br />')
+    text = re.sub(r'\[strong\](.*?)\[/strong\]',
+                  r'<strong>\1</strong>',
+                  text)
+    text = re.sub(r'\[code\](.*?)\[/code\]',
+                  r'<pre><code>\1</code></pre>',
+                  text)
+    text = re.sub(r'\[b\](.*?)\[/b\]',
+                  r'<b>\1</b>',
+                  text)
+    text = re.sub(r'\[u\](.*?)\[/u\]',
+                  r'<u>\1</u>',
+                  text)
+    text = re.sub(r'\[i\](.*?)\[/i\]',
+                  r'<i>\1</i>',
+                  text)
 
-    # balise code avec précision du langage après ":"
-    text = re.sub(
-            r'\[code:(.*?)\](.*?)\[/code\]',
-            r"""<p>code: "\1"</p>
-            <pre><code>\2</code></pre>""",
-            text)
-
-    # citation avec identifiant
-    text = re.sub(
-            r'\[quote:(.*?) (.*?)\](.*?)\[/quote\]',
-            r"""<p> Précedemment "\1" a écrit:"</p>
-            <blockquote>\3</blockquote>""",
-            text)
-
-    # citations avec identifiant
-    text = re.sub(
-            r'\[quote:(.*?)\](.*?)\[/quote\]',
-            r"""<p> Précedemment "\1" a écrit:"</p>
-            <blockquote>\2</blockquote>""",
-            text)
-
-    # image avec lien foireux
-    text = re.sub(
-            r'\[img\]<a href="(.*?)">.*?</a>\[/img\]',
-            r'<img src="\1" alt="no alternative text"></img>',
-            text)
-
-    # images formatées correctement (je ne sais même pas s'il y en a)
-    text = re.sub(
-            r'\[img\](.*?)\[/img\]',
-            r'<img src="\1" alt="no alternative text"></img>',
-            text)
-
-    # images avec url=
-    text = re.sub(
-            r'\[img url="?(.*?)"?\](.*?)\[/img\]',
-            r'<img src="\1" alt="\2"></img>',
-            text)
-
-    # liens avec lien foireux à l'interieur et urltitle
-    text = re.sub(
-            r'\[url= ?<a href="?(.*?)"?>.*?</a> urltitle="?(.*?)"?\]\[/url\]',
-            r'<a href="\1">\2</href>',
-            text)
-
+    # URL
+    text = re.sub(r'\[(?i)url href="<a href="(.*?)">(.*?)</a>"\]<a href="(.*?)">(.*?)</a>\[/url\]',
+                  r'<a href="\1">\4</a>',
+                  text)
     # lien avec lien foireux dedans
-    text = re.sub(
-            r'\[url href="<a href="?(.*?)"?>\](.*?)\[/url\]',
-            r'<a href="\1">\2</href>',
-            text)
-
+    text = re.sub(r'\[(?i)url=<a href="(.*?)">(.*?)</a>\](.*?)\[/url\]',
+                  r'<a href="\1">\3</a>',
+                  text)
+    text = re.sub(r'\[(?i)url href="<a href="(.*?)">(.*?)</a>"\](.*?)\[/url\]',
+                  r'<a href="\1">\3</a>',
+                  text)
+    text = re.sub(r'\[(?i)url\]<a href="(.*?)">(.*?)</a>\[/url\]',
+                  r'<a href="\1">\2</a>',
+                  text)
+    # liens avec lien foireux à l'interieur et urltitle
+    text = re.sub(r'\[url= ?<a href="?(.*?)"?>.*?</a> urltitle="?(.*?)"?\]\[/url\]',
+                  r'<a href="\1">\2</a>',
+                  text)
     # lien correct avec urltitle
-    text = re.sub(
-            r'\[url="?(.*?)"? urltitle="?(.*?)"?\]\[/url\]',
-            r'<a href="\1">\2</href>',
-            text)
+    text = re.sub(r'\[url="?(.*?)"? urltitle="?(.*?)"?\]\[/url\]',
+                  r'<a href="\1">\2</a>',
+                  text)
 
-    # lien correct sans urltitle
-    text = re.sub(
-            r'\[url href=(.*?)\](.*?)\[/url\]',
-            r'<a href="\1">\2</href>',
-            text)
+    # IMAGE
+    # image avec lien foireux
+    text = re.sub(r'\[(?i)img\]<a href="(.*?)">(.*?)</a>\[/img\]',
+                  r'<a href="\1"><img src="\1" alt="\2"/></a>',
+                  text)
+    # images formatées correctement
+    text = re.sub(r'\[(?i)img\](.*?)\[/img\]',
+                  r'<img src="\1" alt="\1"></img>',
+                  text)
+#    # images avec url=
+#    text = re.sub(r'\[img url="?(.*?)"?\](.*?)\[/img\]',
+#                  r'<img src="\1" alt="\2"></img>', text)
+
+    # AUTRE
+    # citation avec identifiant
+    text = re.sub(r'\[quote:(.*?) (.*?)\](.*?)\[/quote\]',
+                  r'\1" a écrit:<blockquote>\3</blockquote>',
+                  text)
+    # citations avec identifiant
+    text = re.sub(r'\[quote:(.*?)\](.*?)\[/quote\]',
+                  r'\1" a écrit:<blockquote>\2</blockquote>',
+                  text)
+#    # balise code avec précision du langage après ":"
+#    text = re.sub(
+#            r'\[code:(.*?)\](.*?)\[/code\]',
+#            r"""<p>code: "\1"</p>
+#            <pre><code>\2</code></pre>""",
+#            text)
 
     comment.getObject().setText(text)
 
 transaction.commit()
-
