@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+  <head><title></title></head>
+  <body>
+    <metal:fill fill-slot="content-core">
+      <metal:main_macro define-macro="content-core"
+            tal:define="company here/getCompany | nothing;
+                        url  here/remoteUrl | nothing;">
+
+<div tal:omit-tag=""
+     tal:define="logo here/logo|nothing;">
+  <div tal:condition="logo" style="float : right; padding : 0 10px 10px 0">
+    <a tal:condition="url" tal:attributes="href url" target="_blank"
+       tal:content="structure here/tag">
+    </a>
+    <img tal:condition="not:url" 
+         tal:replace="structure here/tag"/>
+  </div>
+</div>
+
+<div class="documentDescription"
+     tal:define="description here/Description"
+     tal:condition="description"
+     tal:content="description" />
+
+<div tal:replace="structure here/getText"></div>
+
+<div style="clear:left;"/>
+
+<a tal:condition="here/getSourceUrl" target="_blank"
+   tal:attributes="href here/getSourceUrl"
+   >Voir l'annonce originale
+</a>    
+
+<hr />
+
+<h4 tal:condition="not:url" tal:content="company"></h4>    
+<h4 tal:condition="url" >
+    <a  target="_blank" tal:content="company" tal:attributes="href url">
+    </a>    
+</h4>
+
+<div class="row" tal:condition="here/getAdresse"
+     tal:content="structure python: '<br />'.join(here.getAdresse())">
+ </div>
+    
+<div tal:define="name here/getContact | here/getCompany;
+                 email  here/getEmail | nothing;">
+    <em>Contact:</em>
+    <a tal:attributes="href string:mailto:$email"
+       tal:content="name" >name</a>
+    <span tal:content="here/getPhone"></span>
+</div>
+               
+      </metal:main_macro>
+    </metal:fill>
+      </body>
+</html>

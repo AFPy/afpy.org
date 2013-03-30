@@ -10,4 +10,9 @@
     directory="images"
     />
       
+<browser:page
+	for="*"
+	name="job_view"
+	template="templates/afpyjob_view.pt"
+	permission="zope2.View"/>
 </configure>

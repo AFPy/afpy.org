@@ -55,4 +55,11 @@
       directory="fonts"
       layer=".interfaces.IThemeSpecific"
       />
+      
+  <browser:page
+  	for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+  	name="home_view"
+  	template="templates/home_view.pt"
+  	permission="zope2.View"/>
+
 </configure>
