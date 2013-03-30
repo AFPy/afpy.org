@@ -29,7 +29,12 @@
     cacheable="True" compression="safe" cookable="True"
     enabled="1" expression=""/>
 
-<stylesheet title="afpy theme css" id="afpy.css"
+ <stylesheet title="afpy theme css" id="afpy.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+
+ <stylesheet title="afpy theme fonts" id="fonts.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     enabled="1" expression=""/>

@@ -1,0 +1,78 @@
+@font-face {
+font-family: 'PT Sans';
+font-style: italic;
+font-weight: bold;
+src:
+local('PT Sans Bold Italic'),
+local('PTSans-BoldItalic');
+src: url('/++resource++afpy.theme.fonts/PTS76F-webfont.eot');
+src: url('/++resource++afpy.theme.fonts/PTS76F-webfont.eot?iefix') format('eot'),
+url('/++resource++afpy.theme.fonts/PTS76F-webfont.woff') format('woff'),
+url('/++resource++afpy.theme.fonts/PTS76F-webfont.ttf') format('truetype'),
+url('/++resource++afpy.theme.fonts/PTS76F-webfont.svg#webfontj4PX2AeP') format('svg');
+}
+@font-face {
+font-family: 'PT Sans';
+font-style: normal;
+font-weight: bold;
+src:
+local('PT Sans Bold'),
+local('PTSans-Bold');
+src: url('/++resource++afpy.theme.fonts/PTS75F-webfont.eot');
+src: url('/++resource++afpy.theme.fonts/PTS75F-webfont.eot?iefix') format('eot'),
+url('/++resource++afpy.theme.fonts/PTS75F-webfont.woff') format('woff'),
+url('/++resource++afpy.theme.fonts/PTS75F-webfont.ttf') format('truetype'),
+url('/++resource++afpy.theme.fonts/PTS75F-webfont.svg#webfontUsY7RiQ4') format('svg');
+}
+@font-face {
+font-family: 'PT Sans';
+font-style: italic;
+font-weight: normal;
+src:
+local('PT Sans Italic'),
+local('PTSans-Italic');
+src: url('/++resource++afpy.theme.fonts/PTS56F-webfont.eot');
+src: url('/++resource++afpy.theme.fonts/PTS56F-webfont.eot?iefix') format('eot'),
+url('/++resource++afpy.theme.fonts/PTS56F-webfont.woff') format('woff'),
+url('/++resource++afpy.theme.fonts/PTS56F-webfont.ttf') format('truetype'),
+url('/++resource++afpy.theme.fonts/PTS56F-webfont.svg#webfonte9aO0cZo') format('svg');
+}
+@font-face {
+font-family: 'PT Sans';
+font-style: normal;
+font-weight: normal;
+src:
+local('PT Sans'),
+local('PTSans-Regular');
+src: url('/++resource++afpy.theme.fonts/PTS55F-webfont.eot');
+src: url('/++resource++afpy.theme.fonts/PTS55F-webfont.eot?iefix') format('eot'),
+url('/++resource++afpy.theme.fonts/PTS55F-webfont.woff') format('woff'),
+url('/++resource++afpy.theme.fonts/PTS55F-webfont.ttf') format('truetype'),
+url('/++resource++afpy.theme.fonts/PTS55F-webfont.svg#webfont1xMzgHFI') format('svg');
+}
+@font-face {
+font-family: 'PT Sans Narrow';
+font-style: normal;
+font-weight: bold;
+src:
+local('PT Sans Narrow Bold'),
+local('PTSans-NarrowBold');
+src: url('/++resource++afpy.theme.fonts/PTN77F-webfont.eot');
+src: url('/++resource++afpy.theme.fonts/PTN77F-webfont.eot?iefix') format('eot'),
+url('/++resource++afpy.theme.fonts/PTN77F-webfont.woff') format('woff'),
+url('/++resource++afpy.theme.fonts/PTN77F-webfont.ttf') format('truetype'),
+url('/++resource++afpy.theme.fonts/PTN77F-webfont.svg#webfontMlgQHS8Z') format('svg');
+}
+@font-face {
+font-family: 'PT Sans Narrow';
+font-style: normal;
+font-weight: normal;
+src:
+local('PT Sans Narrow'),
+local('PTSans-Narrow');
+src: url('/++resource++afpy.theme.fonts/PTN57F-webfont.eot');
+src: url('/++resource++afpy.theme.fonts/PTN57F-webfont.eot?iefix') format('eot'),
+url('/++resource++afpy.theme.fonts/PTN57F-webfont.woff') format('woff'),
+url('/++resource++afpy.theme.fonts/PTN57F-webfont.ttf') format('truetype'),
+url('/++resource++afpy.theme.fonts/PTN57F-webfont.svg#webfontBCfTC6h3') format('svg');
+}

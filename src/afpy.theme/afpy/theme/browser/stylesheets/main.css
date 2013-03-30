@@ -1,2 +1,147 @@
 /* Stylesheet for the 'AFPY skin' Plone theme */
 
+
+body {
+    font-family: "PTSansRegular","PT Sans","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.022em;
+    word-spacing: -0.063em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "PTSansNarrowRegular","PT Sans Narrow","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.022em;
+    line-height: 1.2em;
+    padding-bottom: 0.2em;
+    padding-top: 0.6em;
+    word-spacing: -0.063em;
+}
+#content {
+    font-size: 100%;
+    line-height: 1.4em;
+}
+#content .documentDescription, #content #description, #content .description {
+    color: #666666;
+    font-family: "PTSansRegular","PT Sans","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-size: 1.3em;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.022em;
+    line-height: 1.2;
+    word-spacing: -0.063em;
+}
+#content .documentDescription, #content #description {
+    margin-bottom: 0.5em;
+    margin-top: 0.6em;
+}
+#content ul, #content ol {
+    margin-bottom: 0.5em;
+    margin-top: 0;
+}
+#content h2, #content h3, #content h4, #content h5 {
+    color: #376A95;
+}
+#viewlet-below-content {
+    margin-top: 1em;
+}
+#content div.documentByLine, #content span.documentByLine {
+    color: #666666;
+    display: block;
+    font-size: 75%;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: -0.5em;
+}
+#content-core {
+    margin-top: 1em;
+}
+#content p, #content table, #content dl, dl.portlet p, dl.portlet {
+    margin-bottom: 0.6em;
+}
+#content h1.documentFirstHeading {
+    color: #376A95;
+    font-family: "PTSansNarrowRegular","PT Sans Narrow","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-size: 2.3em;
+    font-weight: 700;
+    letter-spacing: 0.022em;
+    margin-top: 0.5em;
+    word-spacing: -0.063em;
+}
+#content table {
+    margin: 2em 0;
+    white-space: nowrap;
+}
+#content table.listing td p, #content table.listing th p {
+    margin: 0;
+}
+#content table.listing td, #content table.listing th {
+}
+#portal-globalnav {
+    font-family: "PTSansNarrowRegular","PT Sans Narrow","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-size: 130%;
+    font-weight: 700;
+    letter-spacing: 0.022em;
+    margin: 0 0 0.5em;
+    word-spacing: -0.063em;
+}
+#portal-globalnav li a {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border-right: 0.2em solid white;
+    display: inline-block;
+    min-width: 5em;
+    padding: 0.3em 2em 0 0.5em;
+}
+#visual-portal-wrapper {
+    margin: 0 auto;
+    width: 70em;
+}
+#portal-globalnav .selected a, #portal-globalnav a:hover {
+    background-color: #376A95;
+}
+#content img.image-left, img.image-right, .captioned img {
+    border: medium none;
+}
+#content a:link, dl.portlet a:link {
+    border-bottom: medium none;
+}
+#content a:visited, dl.portlet a:visited {
+    border-bottom: medium none;
+}
+dl.portlet-static-discover-the-brochure dd.portletItem {
+    margin-bottom: -2em;
+    margin-left: -2em;
+    padding: 0;
+}
+div.portlet-static-social-media {
+    margin-bottom: 2em;
+}
+div.portlet-static-social-media img.twitter-logo {
+    margin-bottom: 3px;
+}
+dt.portletHeader {
+    color: #376A95;
+    font-family: "PTSansNarrowRegular","PT Sans Narrow","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: 0.022em;
+    margin-top: 0.5em;
+    word-spacing: -0.063em;
+}
+dl.portlet dt, div.portletAssignments div.portletHeader {
+    padding: 0.3em 0.7em;
+}
+#edit-bar {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #376A95;
+    border-color: #376A95;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 0.25em;
+}
+#content-views {
+    background-color: #376A95;
+}

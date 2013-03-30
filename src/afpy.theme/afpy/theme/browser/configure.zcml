@@ -50,5 +50,9 @@
       layer=".interfaces.IThemeSpecific"
       />
 
-
+  <browser:resourceDirectory
+      name="afpy.theme.fonts"
+      directory="fonts"
+      layer=".interfaces.IThemeSpecific"
+      />
 </configure>
