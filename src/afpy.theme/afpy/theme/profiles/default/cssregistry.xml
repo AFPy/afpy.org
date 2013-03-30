@@ -34,7 +34,7 @@
     cacheable="True" compression="safe" cookable="True"
     enabled="1" expression=""/>
 
- <stylesheet title="afpy theme fonts" id="fonts.css"
+ <stylesheet id="++resource++afpy.theme.stylesheets/fonts.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     enabled="1" expression=""/>
