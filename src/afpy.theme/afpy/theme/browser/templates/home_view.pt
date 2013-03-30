@@ -12,7 +12,52 @@
     <metal:fill fill-slot="content">
       <metal:main_macro define-macro="content">
 
-<!-- TODO: HTML -->
+        <div class="row">
+            <div class="small-widget">
+            <div id="content-home-block-1">
+            <a href="http://afpy.org" >
+            <h2>L'AFPy</h2>
+               <p>L'Association Francophone Python est une association pour la promotion du langage Python.</p>
+            </a>
+            </div>
+            </div>
+
+            <div class="small-widget">
+            <div id="content-home-block-2">
+            <a href="http://afpy.ro">
+            <h2>Les AFPYRO</h2>
+               <p>Les membres de l'AFPy se retrouvent régulièrement autour
+               d'un verre au cours de réunions informelles qui permettent
+               de joindre l'utile à l'agréable ...</p>
+             </a>
+            </div>
+            </div>
+
+            <div class="small-widget">
+            <div id="content-home-block-3">
+            <a href="http://afpy.org/planet" >
+            <h2>Le planète</h2>
+               <p>L'AFPy héberge le planète python Francophone, un flux
+                  RSS regroupant tous les blogs francophone sur Python.</p>
+               <span class="small-links">
+            </a>
+            </div>
+            </div>
+
+            <div class="small-widget">
+            <div  id="content-home-block-3">
+            <a href="http://www.pycon.fr" >
+            <h2>PyconFR</h2>
+               <p>PyconFR, c'est le rendez-vous annuel des utilisateurs
+                  du langage de programmation Python organisé par l'AFPy.
+                  La conférence, gratuite et libre d'accès, accueille 
+                  chaque année plus de 200 développeurs venus de toute
+                  la France et d'ailleurs.</p>
+               </a>
+            </div>
+            </div>
+
+         </div>
 
       </metal:main_macro>
     </metal:fill>

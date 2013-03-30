@@ -151,3 +151,57 @@ dl.portlet dd.portletItem{
 #content-views {
     background-color: #376A95;
 }
+
+.small-widget{
+    float: left;
+    width: 40%;
+    border-top: #666 3px solid;
+    margin: 15px 15px 15px 5px;
+    padding: 5px 0 0 0;
+    font-size: 13pt;
+    line-height: 1.2em;
+    color: #555;
+}
+.small-widget h2 {
+   font-size: 1.1em;
+}
+.small-widget a, .small-widget a h2{
+   margin-top: 5px;
+   color: #555;
+}
+.small-widget a:hover, .small-widget a:hover h2{
+    margin-top: 5px;
+    color: #376A95;
+}
+#content-home-block-1 {
+    padding: 0px 0 12px 65px;
+    background: transparent url(++resource++afpy.theme.images/block1-icon.gif) top left no-repeat;
+}
+#content-home-block-1:hover {
+    padding: 0px 0 12px 65px;
+    background: transparent url(++resource++afpy.theme.images/block1-icon-hover.gif) top left no-repeat;
+}
+#content-home-block-2 {
+    padding: 0px 0 12px 65px;
+    background: transparent url(++resource++afpy.theme.images/block2-icon.gif) top left no-repeat;
+}
+#content-home-block-2:hover {
+   padding: 0px 0 12px 65px;
+   background: transparent url(++resource++afpy.theme.images/block2-icon-hover.gif) top left no-repeat;
+}
+#content-home-block-3 {
+   padding: 0px 0 12px 65px;
+   background: transparent url(++resource++afpy.theme.images/block3-icon.gif) top left no-repeat;
+}
+#content-home-block-3:hover {
+   padding: 0px 0 12px 65px;
+   background: transparent url(++resource++afpy.theme.images/block3-icon-hover.gif) top left no-repeat;
+}
+#content-home-block-4 {
+   padding: 0px 0 12px 65px;
+   background: transparent url(++resource++afpy.theme.images/block4-icon.gif) top left no-repeat;
+}
+#content-home-block-4:hover {
+   padding: 0px 0 12px 65px;
+   background: transparent url(++resource++afpy.theme.images/block4-icon-hover.gif) top left no-repeat;
+}
