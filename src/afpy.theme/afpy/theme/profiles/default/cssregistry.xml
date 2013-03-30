@@ -23,11 +23,6 @@
       ResourceRegistries/tools/CSSRegistry.py for the latest list of all
       available keys and default values.
       -->
- <stylesheet title=""
-    id="++resource++afpy.theme.stylesheets/main.css"
-    media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="1" expression=""/>
 
  <stylesheet title="afpy theme css" id="afpy.css"
     media="screen" rel="stylesheet" rendering="import"
@@ -35,6 +30,12 @@
     enabled="1" expression=""/>
 
  <stylesheet id="++resource++afpy.theme.stylesheets/fonts.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+
+ <stylesheet title=""
+    id="++resource++afpy.theme.stylesheets/main.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     enabled="1" expression=""/>
