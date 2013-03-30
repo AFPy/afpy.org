@@ -1,0 +1,36 @@
+<html metal:use-macro="here/main_template/macros/master">
+  <body>
+    <div tal:omit-tag="" metal:fill-slot="main"
+         tal:define="jobs python:here.portal_catalog.searchResults(review_state='published',portal_type='AFPY Job',sort_on='created',sort_order='reverse');
+                     toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+      <h1 class="documentFirstHeading">Offres d'emplois</h1>
+        <div tal:condition="jobs" tal:repeat="job jobs">
+          <tal:block define="creator job/Creator;
+                             creatorwebsite job/getRemoteUrl|nothing;
+                             jobobj job/getObject;
+                             logo jobobj/logo|nothing;
+                             ">
+          <a href="" tal:attributes="href job/getURL">
+            <h4 tal:content="job/Title">Job</h4>
+          </a>
+          <span class="discreet">
+            Cr&eacute;&eacute; le <span tal:replace="python:toLocalizedTime(job['created'], 1)" />
+            par <a tal:condition="creatorwebsite" tal:content="creator" tal:attributes="href creatorwebsite">Entreprise</a>
+            <span tal:condition="not:creatorwebsite" tal:content="creator">Entreprise</span>
+          </span>
+          <div tal:condition="logo" style="float : left; padding : 0 10px 10px 0">
+            <a tal:condition="creatorwebsite" tal:attributes="href creatorwebsite" target="_blank"
+               tal:content="structure logo/tag">
+            </a>
+            <img tal:condition="not:creatorwebsite"
+                 tal:replace="structure logo/tag"/>
+          </div>
+          <p tal:content="job/Description"></p>
+          <div class="portletMore">
+            <a href="" tal:attributes="href job/getURL">Lire l'offre</a>
+          </div>
+          </tal:block>
+        </div>
+      </div>
+    </body>
+</html>

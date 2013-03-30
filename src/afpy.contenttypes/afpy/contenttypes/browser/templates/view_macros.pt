@@ -1,0 +1,23 @@
+<div metal:define-macro="file_view"
+     tal:define="file here/file | nothing">
+
+  <p tal:condition="file">
+    <a tal:attributes="href file/absolute_url">
+      T&eacute;l&eacute;chargez la pi&egrave;ce jointe
+      (<span tal:replace="file/getContentType" /> - 
+       <span tal:replace="python:int(file.getSize()) / 1000" /> ko) 
+    </a>
+  </p>
+
+</div>
+
+<div metal:define-macro="image_medium_view"
+     tal:define="image here/image | nothing">
+
+  <div tal:condition="image" style="float : left; padding : 0 10px 10px 0">
+    <a tal:attributes="href image/absolute_url" target="_blank">
+      <img tal:replace="structure here/image_medium" />
+    </a>
+  </div>
+
+</div>

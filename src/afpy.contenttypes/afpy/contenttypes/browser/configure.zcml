@@ -3,16 +3,33 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="afpy.contenttypes">
 
+  <include package="Products.CMFCore" file="configure.zcml" />
+
   <include package="plone.app.contentmenu" />
 
   <browser:resourceDirectory
     name="afpy.contenttypes.images"
     directory="images"
     />
-      
+
 <browser:page
 	for="*"
 	name="job_view"
 	template="templates/afpyjob_view.pt"
 	permission="zope2.View"/>
+
+<browser:page
+	for="*"
+	name="jobs_view"
+	template="templates/afpyjobs_view.pt"
+	permission="zope2.View"/>
+
+
+ <browser:page
+     name="session-data-ini"
+     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+     class=".sessiondata.SessionDataIniView"
+     permission="cmf.ManagePortal"
+     />
+
 </configure>

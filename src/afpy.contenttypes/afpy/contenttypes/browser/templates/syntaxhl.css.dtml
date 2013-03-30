@@ -1,0 +1,264 @@
+/* <dtml-var "enableHTTPCompression(request=REQUEST, debug=1, css=1)"> (this is for http compression) */
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
+
+.dummy_code
+{
+font-family: "Courier New", Courier, monospace;
+font-size: 120%;
+padding: 1em;
+border: &dtml-borderWidth; &dtml-borderStyleAnnotations; &dtml-globalBorderColor;;
+color: &dtml-fontColor;;
+background-color: &dtml-globalBackgroundColor;;
+overflow: auto;
+}
+
+.code_default
+{
+    FONT-FAMILY: "Courier New", Courier, monospace;
+    FONT-SIZE: 10pt;
+}
+
+.css_class
+{
+    color: #900000;
+}
+
+.css_comment
+{
+	color: green;
+	font-style: italic;
+}
+
+.css_default
+{
+}
+
+.css_directive
+{
+    color: #009000;
+	font-weight: bold;
+}
+
+.css_doublestring
+{
+	color: navy;
+}
+
+.css_id
+{
+    color: #900000;
+}
+
+.css_identifier
+{
+	color: black;
+}
+
+.css_important
+{
+	color: blue;
+}
+
+.css_operator
+{
+    color: #000090;
+	font-weight: bold;
+}
+
+.css_pseudoclass
+{
+    color: #900000;
+}
+
+.css_singlestring
+{
+	color: navy;
+}
+
+.css_tag
+{
+    color: #900000;
+	font-weight: bold;
+}
+
+.css_unknown_identifier
+{
+	color: red;
+}
+
+.css_unknown_pseudoclass
+{
+    color: #ff0000;
+}
+
+.css_value
+{
+	color: navy;
+}
+
+.h_asp
+{
+    color: #ffff00;
+}
+
+.h_aspat
+{
+    color: #ffdf00;
+}
+
+.h_attribute
+{
+    color: #008080;
+}
+
+.h_attributeunknown
+{
+    color: #ff0000;
+}
+
+.h_cdata
+{
+    color: #ffdf00;
+}
+
+.h_comment
+{
+    color: #808000;
+}
+
+.h_default
+{
+}
+
+.h_doublestring
+{
+	color: olive;
+}
+
+.h_entity
+{
+    color: #800080;
+}
+
+.h_number
+{
+    color: #009999;
+}
+
+.h_other
+{
+    color: #800080;
+}
+
+.h_script
+{
+    color: #000080;
+}
+
+.h_singlestring
+{
+	color: olive;
+}
+
+.h_tag
+{
+    color: #000080;
+}
+
+.h_tagend
+{
+    color: #000080;
+}
+
+.h_tagunknown
+{
+    color: #ff0000;
+}
+
+.h_xmlend
+{
+    color: #0000ff;
+}
+
+.h_xmlstart
+{
+    color: #0000ff;
+}
+
+.p_character
+{
+	color: olive;
+}
+
+.p_classname
+{
+	color: blue;
+	font-weight: bold;
+}
+
+.p_commentblock
+{
+	color: gray;
+	font-style: italic;
+}
+
+.p_commentline
+{
+	color: green;
+	font-style: italic;
+}
+
+.p_default
+{
+}
+
+.p_defname
+{
+    color: #009999;
+	font-weight: bold;
+}
+
+.p_identifier
+{
+	color: black;
+}
+
+.p_number
+{
+    color: #009999;
+}
+
+.p_operator
+{
+	color: black;
+}
+
+.p_string
+{
+	color: olive;
+}
+
+.p_stringeol
+{
+	color: olive;
+}
+
+.p_triple
+{
+	color: olive;
+}
+
+.p_tripledouble
+{
+	color: olive;
+}
+
+.p_word
+{
+	color: navy;
+	font-weight: bold;
+}
+
+/* </dtml-with> */
