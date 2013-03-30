@@ -2,14 +2,14 @@
 
 
 body {
-    font-family: "PTSansRegular","PT Sans","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-family: "PTSansNarrow","Helvetica Neue",Arial,FreeSans,sans-serif;
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.022em;
+    letter-spacing: 0.042em;
     word-spacing: -0.063em;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: "PTSansNarrowRegular","PT Sans Narrow","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-family: "PTSansNarrowBold","Helvetica Neue",Arial,FreeSans,sans-serif;
     font-weight: 700;
     letter-spacing: 0.022em;
     line-height: 1.2em;
@@ -18,12 +18,12 @@ h1, h2, h3, h4, h5, h6 {
     word-spacing: -0.063em;
 }
 #content {
-    font-size: 100%;
+    font-size: 110%;
     line-height: 1.4em;
 }
 #content .documentDescription, #content #description, #content .description {
     color: #666666;
-    font-family: "PTSansRegular","PT Sans","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-family: "PTSansNarrow","Helvetica Neue",Arial,FreeSans,sans-serif;
     font-size: 1.3em;
     font-style: normal;
     font-weight: 500;
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #content h1.documentFirstHeading {
     color: #376A95;
-    font-family: "PTSansNarrowRegular","PT Sans Narrow","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-family: "PTSansNarrow","Helvetica Neue",Arial,FreeSans,sans-serif;
     font-size: 2.3em;
     font-weight: 700;
     letter-spacing: 0.022em;
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 #content table.listing td, #content table.listing th {
 }
 #portal-globalnav {
-    font-family: "PTSansNarrowRegular","PT Sans Narrow","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-family: "PTSansNarrow","Helvetica Neue",Arial,FreeSans,sans-serif;
     font-size: 130%;
     font-weight: 700;
     letter-spacing: 0.022em;
@@ -108,6 +108,9 @@ h1, h2, h3, h4, h5, h6 {
 #content a:visited, dl.portlet a:visited {
     border-bottom: medium none;
 }
+dl.portlet {
+    font-size: 90%;
+}
 dl.portlet-static-discover-the-brochure dd.portletItem {
     margin-bottom: -2em;
     margin-left: -2em;
@@ -121,7 +124,7 @@ div.portlet-static-social-media img.twitter-logo {
 }
 dt.portletHeader {
     color: #376A95;
-    font-family: "PTSansNarrowRegular","PT Sans Narrow","Helvetica Neue",Arial,FreeSans,sans-serif;
+    font-family: "PTSansNarrow","Helvetica Neue",Arial,FreeSans,sans-serif;
     font-size: 1.3em;
     font-weight: 700;
     letter-spacing: 0.022em;
@@ -130,6 +133,9 @@ dt.portletHeader {
 }
 dl.portlet dt, div.portletAssignments div.portletHeader {
     padding: 0.3em 0.7em;
+}
+dl.portlet dd.portletItem{
+    padding: 0.5em 1em;
 }
 #edit-bar {
     -moz-border-bottom-colors: none;
