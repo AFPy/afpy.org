@@ -33,3 +33,6 @@ for c in conversations:
         item.setModificationDate(lastcommentdate)
         catalog.indexObject(item)
 transaction.commit()
+
+
+#TODO: fix clear and rebuild catalog need 

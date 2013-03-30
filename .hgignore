@@ -8,6 +8,7 @@ src/afpy.gallery/version.txt
 src/collective.gallery
 bin/
 .*.mo
+products/
 parts/
 src/z3c.recipe.staticlxml
 .installed.cfg
