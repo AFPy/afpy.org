@@ -10,7 +10,12 @@
   <metal:main fill-slot="content-core" tal:define="company here/getCompany | nothing;
                         url here/remoteUrl | nothing;">
 <div id="content-core"
-     tal:define="logo here/logo|nothing;">
+     tal:define="logo here/image|nothing;
+     toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+     creation_date here/CreationDate">
+  <div class="discreet">
+            Cr&eacute;&eacute; le <span tal:replace="python:toLocalizedTime(creation_date,1)" />
+          </div>
   <div tal:condition="logo" style="float : right; padding : 0 10px 10px 0">
     <a tal:condition="url" tal:attributes="href url" target="_blank"
        tal:content="structure here/tag">
@@ -31,8 +36,8 @@
     </a>
 </h4>
 
-<div class="row" tal:condition="here/getAdresse"
-     tal:content="structure python: '<br />'.join(here.getAdresse())">
+<div class="row" tal:condition="here/getAddress"
+     tal:content="structure python: '<br />'.join(here.getAddress())">
  </div>
  
  

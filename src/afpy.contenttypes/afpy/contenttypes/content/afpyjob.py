@@ -30,7 +30,7 @@ class AFPYJob(base.ATCTContent):
     
     def tag(self,**kwargs):
         ''' tag wrapper '''
-        return self.getField('logo').tag(self, scale='medium', **kwargs)
+        return self.getField('image').tag(self, scale='medium', **kwargs)
 
     def Creator(self):
         ''' faked creator '''

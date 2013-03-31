@@ -1,36 +1,44 @@
 <html metal:use-macro="here/main_template/macros/master">
   <body>
-    <div tal:omit-tag="" metal:fill-slot="main"
+    <div tal:omit-tag="" metal:fill-slot="content-core"
          tal:define="jobs python:here.portal_catalog.searchResults(review_state='published',portal_type='AFPY Job',sort_on='created',sort_order='reverse');
-                     toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
-      <h1 class="documentFirstHeading">Offres d'emplois</h1>
-        <div tal:condition="jobs" tal:repeat="job jobs">
+                     toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                     b_size python:10;
+b_orphan python:1;
+b_start request/b_start | python:0;
+                     Batch python:modules['Products.CMFPlone'].Batch;
+                     batch python:Batch(jobs, b_size,
+                     int(b_start), orphan=int(b_orphan));">
+        <div class="jobitem" tal:condition="jobs" tal:repeat="job batch">
           <tal:block define="creator job/Creator;
                              creatorwebsite job/getRemoteUrl|nothing;
                              jobobj job/getObject;
-                             logo jobobj/logo|nothing;
+                             logoimg jobobj/image|nothing;
+                             logo jobobj/tag|nothing;
                              ">
           <a href="" tal:attributes="href job/getURL">
-            <h4 tal:content="job/Title">Job</h4>
+            <h2 class="tileHeadline" tal:content="job/Title">Job</h2>
           </a>
           <span class="discreet">
             Cr&eacute;&eacute; le <span tal:replace="python:toLocalizedTime(job['created'], 1)" />
             par <a tal:condition="creatorwebsite" tal:content="creator" tal:attributes="href creatorwebsite">Entreprise</a>
             <span tal:condition="not:creatorwebsite" tal:content="creator">Entreprise</span>
           </span>
-          <div tal:condition="logo" style="float : left; padding : 0 10px 10px 0">
+          <div tal:condition="logoimg" style="float : right; padding : 0 10px 10px 0">
             <a tal:condition="creatorwebsite" tal:attributes="href creatorwebsite" target="_blank"
-               tal:content="structure logo/tag">
+               tal:content="structure logo">
             </a>
             <img tal:condition="not:creatorwebsite"
-                 tal:replace="structure logo/tag"/>
+                 tal:replace="structure logo"/>
           </div>
           <p tal:content="job/Description"></p>
           <div class="portletMore">
             <a href="" tal:attributes="href job/getURL">Lire l'offre</a>
           </div>
+          
           </tal:block>
         </div>
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
       </div>
     </body>
 </html>
