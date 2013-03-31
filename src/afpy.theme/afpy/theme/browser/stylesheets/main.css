@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0.6em;
     word-spacing: -0.063em;
 }
+
+ul.simple li {
+  display: block;
+}
 #content {
     font-size: 110%;
     line-height: 1.4em;
