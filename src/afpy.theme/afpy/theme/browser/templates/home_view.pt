@@ -37,7 +37,7 @@
 
             <div class="small-widget">
             <div id="content-home-block-3">
-              <a href="http://afpy.org/planet/rss.xml" >
+              <a href="http://afpy.org/planet.html" >
             <h2>Le planète</h2>
                <p>L'AFPy héberge le planète python Francophone, un flux
                   RSS regroupant tous les blogs francophone sur Python.</p>
