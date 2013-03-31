@@ -119,9 +119,9 @@ import sys
 
 instance_id = 'afpy'
 if len(sys.argv) > 1:
-    instance_id = sys.argv[1]
+    instance_id = sys.argv[3]
 if instance_id not in app.keys():
-    if instance_id != 'afpy':
+    if instance_id != 'afpy.org':
         print "Le site '%s' n'existe pas. Renseignez le bon id de votre site \
 contenant les forums à corriger !" % instance_id
         sys.exit(1)
@@ -208,5 +208,6 @@ for e, comment in enumerate(comments):
 #            text)
 
     comment.getObject().setText(text)
+    comment.getObject().reindexObject()
 
 transaction.commit()
