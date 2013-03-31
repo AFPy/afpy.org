@@ -18,6 +18,8 @@ for j in jobs:
     creator.text = j.Creator
     creation_date = SubElement(job, 'creation_date')
     creation_date.text = str(j.created)
+    review_state = SubElement(job, 'review_state')
+    review_state.text = j.review_state
     url = SubElement(job, 'url')
     url.text = j.getPath()
     title = SubElement(job, 'title')
